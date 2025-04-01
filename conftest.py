@@ -3,7 +3,6 @@ import pytest
 import requests
 from faker import Faker
 
-
 fake = Faker()
 
 @pytest.fixture(scope="session")
