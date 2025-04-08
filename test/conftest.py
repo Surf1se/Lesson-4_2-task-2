@@ -1,4 +1,4 @@
-from constant import BASE_URL, HEADERS
+from src.constant import BASE_URL, HEADERS
 import pytest
 import requests
 from faker import Faker

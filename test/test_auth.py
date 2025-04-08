@@ -1,4 +1,4 @@
-from constant import BASE_URL
+from src.constant import BASE_URL
 import requests
 
 class TestAuth:
