@@ -1,7 +1,8 @@
-from src.constant import BASE_URL, HEADERS
 import pytest
 import requests
 from faker import Faker
+from src.constant import passData
+from src.constant import BASE_URL, HEADERS
 
 fake = Faker()
 
@@ -9,11 +10,6 @@ fake = Faker()
 def auth_session():
     session = requests.Session()
     session.headers.update(HEADERS)
-
-    passData = {
-        "username": "andrei@yandex.ru",
-        "password": "Qwerty44!"
-    }
 
     auth_response = session.post(f"{BASE_URL}/api/v1/login/access-token", data = passData)
     assert auth_response.status_code == 200
@@ -26,11 +22,7 @@ def auth_session():
 
 @pytest.fixture()
 def get_auth_token():
-    auth_data = {
-        "username": "andrei@yandex.ru",
-        "password": "Qwerty44!"
-    }
-    response = requests.post(f"{BASE_URL}/api/v1/login/access-token", data=auth_data)
+    response = requests.post(f"{BASE_URL}/api/v1/login/access-token", data=passData)
     assert response.status_code == 200
 
     return response.json().get("access_token")

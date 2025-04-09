@@ -1,5 +1,5 @@
-from src.constant import BASE_URL
 import requests
+from src.constant import BASE_URL
 
 class TestAuth:
     def test_auth_session(self, auth_session):

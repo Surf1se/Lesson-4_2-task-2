@@ -1,5 +1,5 @@
-from conftest import BASE_URL
 import requests
+from conftest import BASE_URL
 
 class TestItems:
 
